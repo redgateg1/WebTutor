@@ -6,7 +6,15 @@ gem 'rails', '3.2.16'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-
+group :test, :development do
+  gem 'cucumber-rails'
+  gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
+  gem 'database_cleaner' # to clear Cucumber's test database between runs
+  gem 'capybara'         # lets Cucumber pretend to be a web browser
+  gem 'launchy'
+gem 'rspec-rails'
+# a useful debugging aid for user stories
+end
 # use Haml for templates
 	gem 'haml'
 # Gems used only for assets and not required
