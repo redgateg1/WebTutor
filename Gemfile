@@ -6,8 +6,8 @@ gem 'rails', '3.2.16'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+
 group :test, :development do
-gem 'ruby-debug19'
   gem 'cucumber-rails'
   gem 'cucumber-rails-training-wheels' # some pre-fabbed step definitions  
   gem 'database_cleaner' # to clear Cucumber's test database between runs
