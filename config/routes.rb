@@ -1,4 +1,11 @@
 WebTutor::Application.routes.draw do
+  get "access/index"
+
+  get "access/login"
+
+  resources :users
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
