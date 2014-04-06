@@ -20,6 +20,10 @@
     <%= f.text_field :last_name %>
   </div>
   <div class="field">
+    <%= f.label :user_role %><br />
+    <%= f.text_field :user_role %>
+  </div>
+  <div class="field">
     <%= f.label :username %><br />
     <%= f.text_field :username %>
   </div>
@@ -28,8 +32,8 @@
     <%= f.text_field :password_digest %>
   </div>
   <div class="field">
-    <%= f.label :user_role %><br />
-    <%= f.number_field :user_role %>
+    <%= f.label :subscribtion_expire %><br />
+    <%= f.date_select :subscribtion_expire %>
   </div>
   <div class="actions">
     <%= f.submit %>
