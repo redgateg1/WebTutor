@@ -1,9 +1,9 @@
 WebTutor::Application.routes.draw do
-  get "access/index"
+  
+  get 'home', :to => "access#index"
 
-  get "access/login"
-
-  resources :users
+  match ':controller(/:action(/:id))', :via => [:get,:post]
+  # resources :users
 
 
   # The priority is based upon order of creation:

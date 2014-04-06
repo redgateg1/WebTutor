@@ -1,2 +1,11 @@
-<h1>Access#index</h1>
-<p>Find me in app/views/access/index.html.erb</p>
+<% @page_title = "User Menu" %>
+
+<div>
+  <h2>Student Home Page</h2>
+  <div>Logged in as:</div>
+  <ul>
+    <li><%= link_to("Search For Content", :controller => 'content') %></li>
+    <li><%= link_to("Update My Profile", :controller => 'profile') %></li>
+    <li><%= link_to("Logout", :action => 'logout') %></li>
+  </ul>
+</div>
