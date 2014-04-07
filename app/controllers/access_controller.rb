@@ -1,6 +1,6 @@
 class AccessController < ApplicationController
   
-  before_filter :confirm_logged_in, :except => [:login, :attempt_login, :logout, :renew]
+  before_filter :confirm_logged_in, :except => [:login, :attempt_login, :logout, :renew, :confirm_registration, :register]
   
   def index
 	# display text and links
@@ -12,6 +12,14 @@ class AccessController < ApplicationController
   
   def renew
 	# renew screen with link to payment screen
+  end
+  
+  def register
+	# register new account
+  end
+  
+  def confirm_registration
+    # user registration confirmed."	
   end
   
   def attempt_login
@@ -38,7 +46,7 @@ class AccessController < ApplicationController
       redirect_to(:action => 'login')
     end
   end
-
+  
   def logout
     # mark user as logged out
 	session[:user_id] = nil

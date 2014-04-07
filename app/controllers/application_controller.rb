@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   private
   
   def confirm_logged_in
+    print 'DEBUG running ApplicationController/confirm_logged_in'
 	unless session[:user_id]
 		flash[:notice] = "Please log in."
 		redirect_to(:action => 'login')
