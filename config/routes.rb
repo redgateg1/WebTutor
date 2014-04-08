@@ -1,5 +1,13 @@
 WebTutor::Application.routes.draw do
   
+  resources :categories do
+    resources :tutorials
+  end
+
+
+  resources :tutorials
+
+
   get 'home', :to => "access#index"
 
   match ':controller(/:action(/:id))', :via => [:get,:post]

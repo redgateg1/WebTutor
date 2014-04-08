@@ -1,0 +1,45 @@
+<%= form_for(@tutorial) do |f| %>
+  <% if @tutorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tutorial.errors.count, "error") %> prohibited this tutorial from being saved:</h2>
+
+      <ul>
+      <% @tutorial.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :tutorial_name %><br />
+    <%= f.text_field :tutorial_name %>
+  </div>
+  <div class="field">
+    <%= f.label :tutorial_type %><br />
+    <%= f.text_field :tutorial_type %>
+  </div>
+  <div class="field">
+    <%= f.label :tutorial_date_release %><br />
+    <%= f.date_select :tutorial_date_release %>
+  </div>
+  <div class="field">
+    <%= f.label :tutorial_teacher_name %><br />
+    <%= f.text_area :tutorial_teacher_name %>
+  </div>
+  <div class="field">
+    <%= f.label :tutorial_discription %><br />
+    <%= f.text_area :tutorial_discription %>
+  </div>
+  <div class="field">
+    <%= f.label :tutorial_path %><br />
+    <%= f.text_field :tutorial_path %>
+  </div>
+  <div class="field">
+    <%= f.label :category_id %><br />
+    <%= f.number_field :category_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
