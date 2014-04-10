@@ -44,7 +44,7 @@
 		<div>  
 		  <table>
 			<tr>
-			<td> <li><%= link_to("New User Registration", :controller => 'users/new') %></li> </td>
+			<td> <li><%= link_to("New User Registration", :controller => 'access/register') %></li> </td>
 			</tr>	
 		  </table>
 		</div>

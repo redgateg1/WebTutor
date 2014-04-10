@@ -7,11 +7,11 @@ WebTutor::Application.routes.draw do
 
   resources :tutorials
 
-
+   resources :users
   get 'home', :to => "access#index"
 
   match ':controller(/:action(/:id))', :via => [:get,:post]
-  # resources :users
+
 
 
   # The priority is based upon order of creation:
