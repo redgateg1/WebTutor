@@ -9,6 +9,12 @@
 </head>
 <body id="main_body" >
 	
+
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video> 
 	<img id="top" src="top.png" alt="">
 	<div id="form_container">
 	
@@ -44,7 +50,7 @@
 		<div>  
 		  <table>
 			<tr>
-			<td> <li><%= link_to("New User Registration", :controller => 'access/register') %></li> </td>
+			<td> <li><%= link_to("New User Registration", :controller => 'users/new') %></li> </td>
 			</tr>	
 		  </table>
 		</div>

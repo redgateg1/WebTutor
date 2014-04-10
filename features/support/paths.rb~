@@ -18,7 +18,7 @@ module NavigationHelpers
 when /^the login page$/
 '/access/login'
 when /^the user page$/
-'/users'
+'/user'
 when /^the create new user page$/
 '/users/new'
     # Add more mappings here.

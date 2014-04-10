@@ -12,7 +12,7 @@ describe AccessController do
   describe "GET 'login'" do
     it "allows user to log in" do
       visit "/access/login"
- fill_in "Username", :with => "jdoe"
+ fill_in "username", :with => "jdoe"
 fill_in "Password", :with => "secret"
 click_button "Log in"
       response.should redirect_to("/home")
