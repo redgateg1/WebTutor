@@ -1,8 +1,8 @@
 Given /^a valid user$/ do
-  @user = User.create!({
-             :username => "johnjohn",
-             :password_digest => "password123K",
-           })
+  @user = User.new
+             @user.username = "johnjohn"
+             @user.password = "password123K"
+           @user.save
 end
 
 Given /^a logged in user$/ do

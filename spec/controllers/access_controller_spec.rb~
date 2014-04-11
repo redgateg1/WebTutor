@@ -1,7 +1,18 @@
 require 'spec_helper'
 
 describe AccessController do
+ render_views #this line solved the problem
+  before :each do
+    user = User.new
+user.username = "jdoe"
+user.password = "secreT123KK"
+user.first_name = "John"
+user.last_name = "Smith"
+user.user_role = "student"
+user.created_at = DateTime.now
 
+user.save
+  end
  # describe "GET 'index'" do
   #  it "returns http success" do
  #     get 'index'
@@ -10,12 +21,13 @@ describe AccessController do
 #  end
 
   describe "GET 'login'" do
+debugger
     it "allows user to log in" do
       visit "/access/login"
- fill_in "username", :with => "jdoe"
-fill_in "Password", :with => "secret"
-click_button "Log in"
-      response.should redirect_to("/home")
+ fill_in "Username", :with => "jdoe"
+fill_in  "Password", :with => "secreT123KK"
+click_button "Log In"
+      response.should redirect_to("/access/login")
     end
   end
 
