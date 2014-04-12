@@ -1,8 +1,10 @@
 <p id="notice"><%= notice %></p>
+
 <p>
   <b>Tutorial name:</b>
   <%= @tutorial.tutorial_name %>
 </p>
+
 <p>
   <b>Tutorial type:</b>
   <%= @tutorial.tutorial_type %>
