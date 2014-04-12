@@ -21,14 +21,32 @@ user.save
 #  end
 
   describe "GET 'login'" do
-debugger
+
     it "allows user to log in" do
       visit "/access/login"
  fill_in "Username", :with => "jdoe"
 fill_in  "Password", :with => "secreT123KK"
 click_button "Log In"
-      response.should redirect_to("/access/login")
+      response.should be_success
     end
+
+it "does not allow user to log in" do
+    user = User.new
+user.username = "nancy"
+user.password = "secreT123KK"
+user.first_name = "John"
+user.last_name = "Smith"
+user.user_role = "student"
+user.created_at = DateTime.now
+
+user.save
+      visit "/access/login"
+
+ fill_in "Username", :with => "nancy"
+fill_in  "Password", :with => nil
+click_button "Log In"
+       response.should_not be_success
   end
+end
 
 end

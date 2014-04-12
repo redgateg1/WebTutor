@@ -1,5 +1,7 @@
 Feature: User Authentication
 
+
+
 Scenario: User logs in
 Given a valid user
 When I go to the login page

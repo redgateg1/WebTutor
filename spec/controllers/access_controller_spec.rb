@@ -27,8 +27,9 @@ user.save
  fill_in "Username", :with => "jdoe"
 fill_in  "Password", :with => "secreT123KK"
 click_button "Log In"
-      response.should redirect_to("/access/login")
+      response.should be_success
     end
-  end
+
+end
 
 end

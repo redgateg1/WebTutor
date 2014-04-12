@@ -13,6 +13,7 @@ group :test, :development do
   gem 'database_cleaner' # to clear Cucumber's test database between runs
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'
+gem 'ruby-debug19'
 gem 'rspec-rails'
 # a useful debugging aid for user stories
 end
