@@ -14,7 +14,6 @@ group :test, :development do
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'
 gem 'simplecov' 
-gem 'ruby-debug19'
 gem 'rspec-rails'
 # a useful debugging aid for user stories
 end
