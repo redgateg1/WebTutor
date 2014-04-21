@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Tutorial name:</b>
+  <%= @tutorial.tutorial_name %>
+</p>
+
+<p>
+  <b>Tutorial type:</b>
+  <%= @tutorial.tutorial_type %>
+</p>
+
+<p>
+  <b>Tutorial date release:</b>
+  <%= @tutorial.tutorial_date_release %>
+</p>
+
+<p>
+  <b>Tutorial teacher name:</b>
+  <%= @tutorial.tutorial_teacher_name %>
+</p>
+
+<p>
+  <b>Tutorial discription:</b>
+  <%= @tutorial.tutorial_discription %>
+</p>
+
+<p>
+  <b>Tutorial path:</b>
+  <%= @tutorial.tutorial_path %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @tutorial.category_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_tutorial_path(@tutorial) %> |
+<%= link_to 'Back', tutorials_path %>

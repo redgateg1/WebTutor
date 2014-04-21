@@ -1,0 +1,32 @@
+<h1>Listing users</h1>
+
+<table>
+  <tr>
+    <th>First name</th>
+    <th>Last name</th>
+    <th>User role</th>
+    <th>Username</th>
+    <th>Password digest</th>
+    <th>Subscribtion expire</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%= user.first_name %></td>
+    <td><%= user.last_name %></td>
+    <td><%= user.user_role %></td>
+    <td><%= user.username %></td>
+    <td><%= user.password_digest %></td>
+    <td><%= user.subscribtion_expire %></td>
+    <td><%= link_to 'Show', user %></td>
+    
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New User', new_user_path %>
