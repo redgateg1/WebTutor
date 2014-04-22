@@ -22,6 +22,9 @@ when /^the user page$/
 when /^the create new user page$/
 '/users/new'
 
+	when /^the show page for "(.*)"/
+	d = Tutorial.find_by_tutorial_name($1).id
+	"/tutorials/#{d}"
 when /^the tutorial home page$/
 '/tutorials'
 when /^the tutorial with id one$/

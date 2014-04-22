@@ -2,10 +2,14 @@
 Feature: Update User
 
 Scenario: Update existing user
-Given I am on the home page
-When I click on "update profile"
-And I change the "First name" from "Rio" to "Riad"
-And I change the "Last name" from "Jar" to "Jaradeh"
-And I change the "Password" from "mypass" to "mypass#"
-And I press "Update Information"
+Scenario: User logs in
+Given a valid user
+When I go to the login page
+And I fill in "Username" with "johnjohn"
+And I fill in "Password" with "password123K"
+And I press "Log In"
 Then I should be on the home page
+When I follow "Update My Profile"
+And I fill in "Username" with "johnyo"
+And I press "Update User"
+Then I should see "User was successfully updated."

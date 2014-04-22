@@ -23,7 +23,7 @@ when /^the create new user page$/
 '/users/new'
 
 when /^the tutorial home page$/
-'/categories/1/tutorials'
+'/tutorials'
 when /^the tutorial with id one$/
 '/tutorials/1'
 when /^the tutorial with id two$/

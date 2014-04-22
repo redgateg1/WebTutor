@@ -142,5 +142,23 @@ describe CategoriesController do
     end
   end
 
-  
+  describe "DELETE destroy" do
+    it "destroys the requested category" do
+      category = Category.new 
+category.categ_name = "lol"
+category.save
+      expect {
+        delete :destroy, {:id => category.to_param}, valid_session
+      }.to change(Category, :count).by(-1)
+    end
+
+    it "redirects to the categories list" do
+           category = Category.new 
+category.categ_name = "lol"
+category.save
+      delete :destroy, {:id => category.to_param}, valid_session
+      response.should redirect_to(categories_url)
+    end
+  end
+
 end

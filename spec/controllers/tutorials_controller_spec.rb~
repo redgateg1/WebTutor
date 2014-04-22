@@ -23,7 +23,7 @@ describe TutorialsController do
   # This should return the minimal set of attributes required to create a valid
   # Tutorial. As you add validations to Tutorial, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) { { "tutorial_name" => "MyString", "tutorial_type" => "math", "category_id" => 1, "tutorial_release_date" => DateTime.now, "tutorial_description" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" } }
+  let(:valid_attributes) { { "tutorial_name" => "MyString", "tutorial_date_release" => DateTime.now, "tutorial_discription" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" } }
 
   # This should return the minimal set of values that should be in the session
   # in order to pass any filters (e.g. authentication) defined in
@@ -33,9 +33,7 @@ describe TutorialsController do
   describe "GET index" do
     it "assigns all tutorials as @tutorials" do
       tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"
@@ -49,9 +47,7 @@ tutorial.save
   describe "GET show" do
     it "assigns the requested tutorial as @tutorial" do
            tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"
@@ -72,9 +68,7 @@ tutorial.save
   describe "GET edit" do
     it "assigns the requested tutorial as @tutorial" do
             tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"
@@ -89,18 +83,18 @@ tutorial.save
     describe "with valid params" do
       it "creates a new Tutorial" do
         expect {
-          post :create, {:tutorial => { "tutorial_name" => "MyString", "tutorial_type" => "math", "category_id" => 1, "tutorial_release_date" => DateTime.now, "tutorial_description" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
+          post :create, {:tutorial => { "tutorial_name" => "MyString", "category_id" => 1, "tutorial_date_release" => DateTime.now, "tutorial_discription" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
         }.to change(Tutorial, :count).by(1)
       end
 
       it "assigns a newly created tutorial as @tutorial" do
-        post :create, {:tutorial => { "tutorial_name" => "MyString", "tutorial_type" => "math", "category_id" => 1, "tutorial_release_date" => DateTime.now, "tutorial_description" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
+        post :create, {:tutorial => { "tutorial_name" => "MyString", "tutorial_date_release" => DateTime.now, "tutorial_discription" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
         assigns(:tutorial).should be_a(Tutorial)
         assigns(:tutorial).should be_persisted
       end
 
       it "redirects to the created tutorial" do
-        post :create, {:tutorial => { "tutorial_name" => "MyString", "tutorial_type" => "math", "category_id" => 1, "tutorial_release_date" => DateTime.now, "tutorial_description" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
+        post :create, {:tutorial => { "tutorial_name" => "MyString",  "tutorial_date_release" => DateTime.now, "tutorial_discription" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
         response.should redirect_to(Tutorial.last)
       end
     end
@@ -126,9 +120,7 @@ tutorial.save
     describe "with valid params" do
       it "updates the requested tutorial" do
               tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"
@@ -144,29 +136,25 @@ tutorial.save
 
       it "assigns the requested tutorial as @tutorial" do
            tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"
 tutorial.tutorial_date_release = DateTime.now
 tutorial.save
-        put :update, {:id => tutorial.to_param, :tutorial => { "tutorial_name" => "MyString", "tutorial_type" => "math", "category_id" => 1, "tutorial_release_date" => DateTime.now, "tutorial_description" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
+        put :update, {:id => tutorial.to_param, :tutorial => { "tutorial_name" => "MyString", "tutorial_date_release" => DateTime.now, "tutorial_discription" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
         assigns(:tutorial).should eq(tutorial)
       end
 
       it "redirects to the tutorial" do
               tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"
 tutorial.tutorial_date_release = DateTime.now
 tutorial.save
-        put :update, {:id => tutorial.to_param, :tutorial => { "tutorial_name" => "MyString", "tutorial_type" => "math", "category_id" => 1, "tutorial_release_date" => DateTime.now, "tutorial_description" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
+        put :update, {:id => tutorial.to_param, :tutorial => { "tutorial_name" => "MyString", "tutorial_date_release" => DateTime.now, "tutorial_discription" => "dsadsad", "tutorial_teacher_name" => "Teacher", "tutorial_path" => "dsadsad" }}, valid_session
         response.should redirect_to(tutorial)
       end
     end
@@ -174,9 +162,7 @@ tutorial.save
     describe "with invalid params" do
       it "assigns the tutorial as @tutorial" do
               tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"
@@ -190,9 +176,7 @@ tutorial.save
 
       it "re-renders the 'edit' template" do
               tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"
@@ -209,9 +193,7 @@ tutorial.save
   describe "DELETE destroy" do
     it "destroys the requested tutorial" do
       tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"
@@ -224,9 +206,7 @@ tutorial.save
 
     it "redirects to the tutorials list" do
            tutorial = Tutorial.new
-tutorial.category_id = 1
 tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_type = "math"
 tutorial.tutorial_discription = "dasdsadas"
 tutorial.tutorial_path = "dsadsadsadsadsad"
 tutorial.tutorial_teacher_name = "miss"

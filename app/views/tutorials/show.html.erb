@@ -1,39 +1,9 @@
-<p id="notice"><%= notice %></p>
-<p>
-  <b>Tutorial name:</b>
-  <%= @tutorial.tutorial_name %>
-</p>
-<p>
-  <b>Tutorial type:</b>
-  <%= @tutorial.TutorialType %>
-</p>
+<% @page_title = "User Menu" %>
 
-<p>
-  <b>Tutorial date release:</b>
-  <%= @tutorial.tutorial_date_release %>
-</p>
+ <p> <b><center><font size="5"><%= @tutorial.tutorial_name  %></font></center></b></p>
+<p><center><iframe 
+      src="<%= @tutorial.avatar %>" style="width:600px; height:500px;" frameborder="0"/></iframe>
 
+</center> </p>
 
-
-<p>
-  <b>Tutorial discription:</b>
-  <%= @tutorial.tutorial_discription %>
-</p>
-
-<p>
-  <b>Tutorial path:</b>
-  <%= @tutorial.avatar %>
-</p>
-
-<p>
-  <b>Category:</b>
-  <%= @tutorial.CategoryID %>
-</p>
-<video width="320" height="240" controls>
-  <source src="public<%=@tutorial.avatar%>">
-  
-  Your browser does not support the video tag.
-</video>
-
-<%= link_to 'Edit', edit_tutorial_path(@tutorial) %> |
-<%= link_to 'Back', tutorials_path %>
+<a href="<%= @tutorial.avatar %>" download="<%= @tutorial.avatar %>" >You can download this too!</a>

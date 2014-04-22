@@ -1,3 +1,13 @@
+Given /^a valid tutorial$/ do
+  @tutorial = Tutorial.new
+@tutorial.tutorial_name = "MathStuff"
+@tutorial.tutorial_discription = "dasdsadas"
+@tutorial.tutorial_path = "/math.mv4"
+@tutorial.tutorial_teacher_name = "miss"
+@tutorial.tutorial_date_release = DateTime.now
+@tutorial.save
+end
+
 Given /^a valid user$/ do
   @user = User.new
              @user.username = "johnjohn"

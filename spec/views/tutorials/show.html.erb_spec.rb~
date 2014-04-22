@@ -4,6 +4,7 @@ describe "tutorials/show" do
   before(:each) do
     @tutorial = assign(:tutorial, stub_model(Tutorial,
       :tutorial_name => "Tutorial Name",
+      :tutorial_discription => "MyText",
 
     ))
   end
@@ -12,6 +13,7 @@ describe "tutorials/show" do
     render
     # Run the generator again with the --webrat flag if you want to use webrat matchers
     rendered.should match(/Tutorial Name/)
+    rendered.should match(/MyText/)
  
   end
 end

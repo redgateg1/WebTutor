@@ -3,9 +3,9 @@ Feature: View tutorials
 
   Given the following tutorials exist:
   | tutorial_name                   | tutorial_path | category_id | tutorial_type | tutorial_discription | tutorial_teacher_name | tutorial_date_release 
-  | Aladdin                 | huh.pdf      | 1 | math | blah | blahblah | 15 April 2014 
-  | The Terminator          | what.mp3      | 1 | math | blah | blahblah | 15 April 2014 
-  | When Harry Met Sally    | why.mp4      | 1 | math | blah | blahblah | 15 April 2014 
+  | Aladdin                 | huh.pdf      | 1 | math | blah | blahblah | 2014-05-25 | 
+  | The Terminator          | what.mp3      | 1 | math | blah | blahblah | 2014-5-25 |
+  | When Harry Met Sally    | why.mp4      | 1 | math | blah | blahblah | 2014-5-25 |
 And  I am on the tutorial home page
 And I should see "Aladdin"
 
