@@ -1,0 +1,9 @@
+<% @page_title = "User Menu" %>
+
+ <p> <b><center><font size="5"><%= @tutorial.tutorial_name  %></font></center></b></p>
+<p><center><iframe 
+      src="<%= @tutorial.avatar %>" style="width:600px; height:500px;" frameborder="0"/></iframe>
+
+</center> </p>
+
+<a href="<%= @tutorial.tutorial_path %>" download="<%= @tutorial.avatar %>" >You can download this too!</a>

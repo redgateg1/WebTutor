@@ -1,0 +1,26 @@
+<% @page_title = "User Menu" %>
+
+<br />
+ <p> <b><center><font size="5"><%= @tutorial.tutorial_name  %></font></center></b></p>
+<p><center><iframe 
+      src="<%= @tutorial.avatar %>" style="width:800px; height:600px;" frameborder="5"/></iframe>
+
+</center> </p>
+
+<a href="<%= @tutorial.avatar %>" download="<%= @tutorial.avatar %>" >You can download this too!</a>
+
+<br />
+<%= link_to 'Back', tutorials_path %>
+<br />
+<h2> Comments </h2>
+<div id="comments">
+  <%= render :partial => @tutorial.comments.reverse %>
+</div>
+
+<%= form_for([@tutorial, Comment.new], remote: true) do |f| %>
+   <p>
+     <%= f.label :body, "New Comment" %><br />
+	 <%= f.text_area :body,:cols => "40", :rows => "1" %>
+   </p>
+   <p><%= f.submit "Add Comment" %></p>
+<% end %>

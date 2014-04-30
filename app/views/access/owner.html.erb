@@ -1,0 +1,10 @@
+<% @page_title = "User Menu" %>
+
+<div>
+  <h2>Owners Home Page</h2>
+  <div>Logged in as: <%= session[:username] %></div>
+  <ul>
+    <li><%= link_to("Upload Content", :controller => 'tutorials') %></li>
+    <li><%= link_to("Update My Profile", :controller => 'users', :action => 'edit', :id => session[:user_id]) %></li>
+  </ul>
+</div>

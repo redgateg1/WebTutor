@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Registration Form</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+
+</head>
+<body id="main_body" >
+	
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a> </a></h1>
+			<form id="form_823853" class="appnitro"  method="post" action="create">
+		<div class="form_description">
+			<h2>New User Registration</h2>
+			<p></p>
+		</div>	
+
+		<div>
+		  <%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+		  <table>
+			<tr>
+			  <td><%= f.label(:first_name) %></td>
+			  <td><%= f.text_field(:first_name) %></td>
+			</tr>
+			<tr>
+			  <td><%= f.label(:last_name) %></td>
+			  <td><%= f.text_field(:last_name) %></td>
+			</tr>
+			<%= f.hidden_field :user_role, :value => 'student'%>
+			<tr>
+			  <td><%= f.label(:username) %></td>
+			  <td><%= f.text_field(:username) %></td>
+			</tr>
+			<tr>
+			  <td><%= f.label(:password) %></td>
+			  <td><%= f.password_field(:password) %></td>
+			</tr>
+			<tr>
+			<%= f.hidden_field :subscribtion_expire, :value => DateTime.current %>
+
+			  <td>&nbsp;</td>
+			  <td><%= f.submit("Create User") %></td>
+			</tr>	
+		  </table>
+		  <% end %>
+		</div>  
+	</div>
+</form>
+

@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>First name:</b>
+  <%= @user.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%= @user.last_name %>
+</p>
+
+<p>
+  <b>User role:</b>
+  <%= @user.user_role %>
+</p>
+
+<p>
+  <b>Username:</b>
+  <%= @user.username %>
+</p>
+
+<p>
+  <b>Password digest:</b>
+  <%= @user.password_digest %>
+</p>
+<p>
+  <b>Created at:</b>
+  <%= @user.created_at %>
+</p>
+<p>
+  <b>Subscribtion expire:</b>
+  <%= @user.subscribtion_expire %>
+</p>
+
+
+
+<%= link_to 'Back', users_path %>

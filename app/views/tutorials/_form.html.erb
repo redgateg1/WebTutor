@@ -1,0 +1,62 @@
+<%= form_for(@tutorial) do |f| %>
+  <% if @tutorial.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tutorial.errors.count, "error") %> prohibited this tutorial from being saved:</h2>
+
+      <ul>
+      <% @tutorial.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" align="left">
+  	&nbsp;&nbsp;&nbsp;<b><font size="5"><u><%=f.label :Upload_Tutorial_Here%></u></font></b><br />
+  </div></br>
+  <div class="field" align="left">
+    &nbsp;&nbsp;&nbsp;<b><%= f.label :tutorial_name %></b>
+    &nbsp;&nbsp;&nbsp;<%= f.text_field :tutorial_name %>
+  </div>
+  
+  <div class="field" align="left">
+  	&nbsp;&nbsp;&nbsp;<b><%= f.label :Tutoroal_Type %></b>
+	&nbsp;&nbsp;&nbsp;<select name="tutorial[TutorialType]">
+		  	<option value="Audio">Audio</option>
+		  	<option value="Video">Video</option>
+		  	<option value="Document">Documents</option>
+		  </select>
+	  	</div>
+  <div class="field" align="left">
+    &nbsp;&nbsp;&nbsp;<b><%= f.label :Date_of_release %></b>
+    <%= f.date_select :tutorial_date_release %>
+  </div>
+  <!--<div class="field">
+    <%= f.label :tutorial_teacher_name %><br />
+    <%= f.text_area :tutorial_teacher_name %>
+  </div>-->
+  <div class="field" align="left">
+    &nbsp;&nbsp;&nbsp;<b><%= f.label :Description%></b>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.text_area :tutorial_discription,:cols => "40", :rows => "5" %>
+  </div>
+  <!--<div class="field">
+    <%= f.label :tutorial_path %><br />
+    <%= f.text_field :tutorial_path %>
+  </div>-->
+  
+  <div class="field" align="left">
+  	&nbsp;&nbsp;&nbsp;<b><%= f.label :Category %></b>
+		 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="tutorial[CategoryID]">
+		  	<option value="Mathematics">Mathematics</option>
+		  	<option value="Reading">Reading</option>
+		  	<option value="Writing">Writing</option>
+		  </select>
+	  	</div>
+	  	<div class="field" align="left">
+	   &nbsp;&nbsp;&nbsp;<b><%= f.label :Select_file %></b>
+	   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<%= f.file_field :avatar %>
+	  </div>
+  <div class="actions" align="left">
+    &nbsp;&nbsp;&nbsp;<b><%= f.submit %></b>
+  </div>
+<% end %>
