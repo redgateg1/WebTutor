@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Web Tutor" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Web Tutor" %>">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    
+    <main role="main">
+      <%= render 'layouts/messages' %>
+      <%= yield %>
+    </main>
+    <footer>
+	<h5> Copy Right Reserved @2014 - this Website is made by Riad Jaradeh, Frank Paladino, Gabrielle Redgate, Pritesh Parekh, and Srilakshmi Dhulipala</h5>
+	</footer>
+  </body>
+</html>

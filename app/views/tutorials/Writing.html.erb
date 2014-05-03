@@ -1,0 +1,32 @@
+<header>
+<%= render 'access/navigation' %>
+</header>
+<br/>
+<div>
+<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Writing Tutorials</h1>
+
+<br />
+</div>
+<br/>
+<br/>
+<table id="tutorials">
+  <tr class="tutorials_tr">
+    <th class="tutorials_th">Tutorial Name</th>
+    <th class="tutorials_th">Tutorial Type</th>
+    <th class="tutorials_th">Date Released</th>
+    <th class="tutorials_th">Category</th>
+	<th class="tutorials_th">Functions</th>
+  </tr>
+
+<% @tut3.each do |tutorial| %>
+  <tr class="tutorials_tr">
+    <td class="tutorials_td"><%= tutorial.tutorial_name %></td>
+    <td class="tutorials_td"><%= tutorial.TutorialType %></td>
+    <td class="tutorials_td"><%= tutorial.tutorial_date_release %></td>
+    <td class="tutorials_td"><%= tutorial.CategoryID %></td>
+	
+    
+    <td class="tutorials_td"><%= link_to 'Show', tutorial %>  <%= link_to 'Edit', edit_tutorial_path(tutorial) %>  <%= link_to 'Delete', tutorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

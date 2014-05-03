@@ -1,0 +1,31 @@
+<% @page_title = "User Menu" %>
+<body>
+<header>
+<%= render 'access/navigation' %>
+</header>
+<div>
+  <div id="welcome"><h2>Welcome <%= session[:username] %>!</h2></div>
+  <div>
+  <div class="mainimg">
+ <img src="assets/SAT.jpg" alt="SAT Tutorial Website" width="900" height="300">
+</div>
+<br/>
+<br/>
+<br/>
+  <div>
+  <div class="img">
+ <img src="assets/math.jpg" alt="Math" width="387" height="250">
+ <a href="/tutorials/Math"> <div class="desc">Check out our math tutorials</div></a>
+</div>
+ <div class="img">
+ <img src="assets/reading.jpg" alt="Reading" width="387" height="250">
+ <a href="/tutorials/Reading"> <div class="desc">Check out our reading tutorials</div></a>
+</div>
+ <div class="img">
+ <img src="assets/writing.jpg" alt="Writing" width="387" height="250">
+ <a href="/tutorials/Writing"> <div class="desc">Check out our math tutorials</div></a>
+ </div>
+</div>
+
+</div>
+</body>

@@ -1,0 +1,15 @@
+<ul>
+	<table border="0">
+    <tr>
+    	<td colspan="2">
+    <% @tutorials.each do |tutorial| %>
+    <div align="left"><font size="3">
+  <li>Your Result is:<%= link_to tutorial.tutorial_discription, 
+    :action => 'show', :id => tutorial.id  %></li></font>
+    </div>
+    </td>
+    <td></td>
+  <% end %>
+  </tr>
+  </table>
+  </ul>

@@ -1,0 +1,21 @@
+<h1>Listing comments</h1>
+
+<table>
+  <tr>
+    <th>Body</th>
+    <th>Tutorial</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.body %></td>
+    <td><%= comment.tutorial_id %></td>
+    <td><%= link_to 'Show', {:action=>"show", :controller=>"comments", :tutorial_id=> comment.tutorial_id, :id=> comment.id} %></td>
+    <td><%= link_to 'Edit', {:action=>"edit", :controller=>"comments", :tutorial_id=> comment.tutorial_id, :id=> comment.id} %></td>
+    <td><%= link_to 'Destroy', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>

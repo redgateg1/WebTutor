@@ -1,0 +1,10 @@
+<li><%= link_to 'Tutorials', :controller => 'tutorials'  %></li>
+<li><%= link_to("My Profile", :controller => 'users', :action => 'edit', :id => session[:user_id]) %></li> |
+<li><%= link_to 'Logout', :controller => 'access', :action => 'logout'  %></li>|
+<li>
+<div id="search">
+<input type="submit" value="Search"> <input type="text" name="search">
+</div>
+</li>
+
+

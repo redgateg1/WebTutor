@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Registration Form</title>
+<link rel="stylesheet" type="text/css" href="view.css" media="all">
+<script type="text/javascript" src="view.js"></script>
+
+</head>
+<body id="main_body" >
+	
+
+<video width="320" height="240" controls>
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video> 
+	<img id="top" src="top.png" alt="">
+	<div id="form_container">
+	
+		<h1><a> </a></h1>
+			<form id="form_823853" class="appnitro"  method="post" action="attempt_login">
+		<div class="form_description">
+			<h2>Welcome to SAT Training</h2>
+			<p></p>
+		</div>	
+
+	
+		<% @page_title = "Registered Users:" %>
+		<p><u>Registered Users</u></p>
+		<div>
+		  <%= form_tag(:action => 'attempt_login') do %>
+		  <table>
+			<tr>
+			  <td><%= label_tag(:username) %></td>
+			  <td><%= text_field_tag(:username) %></td>
+			</tr>
+			<tr>
+			  <td><%= label_tag(:password) %></td>
+			  <td><%= password_field_tag(:password) %></td>
+			</tr>
+			<tr>
+			  <td>&nbsp;</td>
+			  <td><%= submit_tag("Log In") %></td>
+			</tr>	
+		  </table>
+		  <% end %>
+		</div>  
+	  
+		<div>  
+		  <table>
+			<tr>
+			<td> <li><%= link_to("New User Registration", :controller => 'users/new') %></li> </td>
+			</tr>	
+		  </table>
+		</div>
+	</div>
+</form>
