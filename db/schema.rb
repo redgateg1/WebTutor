@@ -26,28 +26,6 @@ ActiveRecord::Schema.define(:version => 20140422212743) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "data_files", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "friends", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at",          :null => false
-    t.datetime "updated_at",          :null => false
-    t.string   "avatar_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-  end
-
-  create_table "projects", :id => false, :force => true do |t|
-    t.string   "image_file_name"
-    t.string   "image_file_type"
-    t.integer  "image_file_size"
-    t.datetime "image_update_at"
-  end
-
   create_table "tutorials", :force => true do |t|
     t.string   "tutorial_name"
     t.string   "TutorialType"
@@ -62,15 +40,6 @@ ActiveRecord::Schema.define(:version => 20140422212743) do
     t.string   "avatar_content_type"
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
-  end
-
-  create_table "upload", :force => true do |t|
-    t.string   "name"
-    t.string   "photo_file_name"
-    t.string   "photo_content_type"
-    t.string   "photo_file_size"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
   end
 
   create_table "users", :force => true do |t|
