@@ -12,7 +12,6 @@ print 'DAAAAAAAAAAAAAAAARN'
 		return false #halts the before_action
 	else
 		return true
-print 'so it happens'
 	end
   end
   

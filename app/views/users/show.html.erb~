@@ -24,10 +24,7 @@
   <b>Password digest:</b>
   <%= @user.password_digest %>
 </p>
-<p>
-  <b>Created at:</b>
-  <%= @user.created_at %>
-</p>
+
 <p>
   <b>Subscribtion expire:</b>
   <%= @user.subscribtion_expire %>

@@ -21,6 +21,24 @@ when /^the user page$/
 '/users'
 when /^the create new user page$/
 '/users/new'
+when /^the renew page$/
+'/access/renew'
+
+when /^the math page$/
+'/mathematics'
+
+when /^the reading page$/
+'/readingfilter'
+
+when /^the writing page$/
+'/writingfilter'
+
+	when /^the edit page for "(.*)"/
+	d = Tutorial.find_by_tutorial_name($1).id
+	"/tutorials/#{d}/edit"
+	when /^the profile page for "(.*)"/
+	d = User.find_by_username($1).id
+	"/users/#{d}"
 
 	when /^the show page for "(.*)"/
 	d = Tutorial.find_by_tutorial_name($1).id

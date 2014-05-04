@@ -10,9 +10,9 @@ WebTutor::Application.routes.draw do
   
   get 'home', :to => "access#index"
   
-  get '/tutorials/Math', :to => "tutorial#MathFilter"
-  get '/tutorials/Reading', :to => "tutorial#ReadingFilter"
-  get '/tutorials/Writing', :to => "tutorial#WritingFilter"
+  get '/mathematics', :to => "tutorials#Math"
+  get '/readingfilter', :to => "tutorials#Reading"
+  get '/writingfilter', :to => "tutorials#Writing"
   
   match ':controller(/:action(/:id))', :via => [:get,:post]
   

@@ -1,8 +1,3 @@
-<% @page_title = "User Menu" %>
-<header>
-<%= render 'access/navigation' %>
-</header>
-
 <ul>Your Results are:
 	<table border="0">
     <tr>

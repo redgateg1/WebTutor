@@ -34,28 +34,30 @@ end
   # UsersController. Be sure to keep this updated too.
   let(:valid_session) { {} }
 
-
-
-
-  describe "GET show" do
-    it "assigns the requested user as @user" do
-#FactoryGirl.find_definitions
-            user = User.new
+  describe "GET index" do
+    it "assigns all users as @users" do
+      user = User.new
 user.first_name = "MyString"
-user.username = "yoaa22"
+user.last_name = "MyString"
+user.username = "yo"
 user.password = "PaSs789K"
-user.last_name = "dsadsad"
-user.created_at = Time.now
-user.subscribtion_expire ="05-05-2018"
+user.user_role = "student"
 user.save
-      visit "/access/login"
- fill_in "Username", :with => "jdoe"
-fill_in  "Password", :with => "secreT123KK"
-click_button "Log In"
-d = user.id
-visit "/users/#{d}"
- # @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("username:password")
-    response.should be_success
+      get :index, {}, valid_session
+      assigns(:users).should eq([user])
+    end
+  end
+
+
+   describe "GET show" do
+    it "assigns the requested user as @user" do
+           user = User.new
+user.first_name = "MyString"
+user.username = "yo"
+user.password = "PaSs789K"
+user.save
+      get :show, {:id => user.to_param}, valid_session
+      assigns(:user).should eq(user)
     end
   end
 
@@ -71,21 +73,12 @@ visit "/users/#{d}"
     it "assigns the requested user as @user" do
             user = User.new
 user.first_name = "MyString"
-user.username = "yoaa22"
+user.last_name = "ddd"
+user.username = "yo"
 user.password = "PaSs789K"
-user.last_name = "dsadsad"
-user.created_at = Time.now
-user.subscribtion_expire ="05-05-2018"
 user.save
-      visit "/access/login"
- fill_in "Username", :with => "jdoe"
-fill_in  "Password", :with => "secreT123KK"
-click_button "Log In"
-response.should be_success
-d = user.id
-visit "/users/#{d}/edit"
- # @request.env["HTTP_AUTHORIZATION"] = "Basic " + Base64::encode64("username:password")
-    response.should be_success
+      get :edit, {:id => user.to_param}, valid_session
+      assigns(:user).should eq(user)
     end
   end
 
@@ -93,7 +86,7 @@ visit "/users/#{d}/edit"
     describe "with valid params" do
       it "creates a new User" do
         expect {
-          post :create, {:user => { "first_name" => "MyString", "last_name" => "dsadsad", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
+          post :create, {:user => { "first_name" => "MyStddring", "last_name" => "dsadsad", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
         }.to change(User, :count).by(1)
       end
 
@@ -122,6 +115,74 @@ visit "/users/#{d}/edit"
         User.any_instance.stub(:save).and_return(false)
         post :create, {:user => { "first_name" => "invalid value" }}, valid_session
         response.should render_template("new")
+      end
+    end
+  end
+describe "PUT update" do
+    describe "with valid params" do
+      it "updates the requested user" do
+             user = User.new
+user.first_name = "MyString"
+user.last_name = "ddd"
+user.username = "yo"
+user.password = "PaSs789K"
+user.save
+        # Assuming there are no other users in the database, this
+        # specifies that the User created on the previous line
+        # receives the :update_attributes message with whatever params are
+        # submitted in the request.
+        User.any_instance.should_receive(:update_attributes).with({ "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" })
+        put :update, {:id => user.to_param, :user => { "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
+      end
+
+      it "assigns the requested user as @user" do
+              user = User.new
+user.first_name = "MyString"
+user.last_name = "ddd"
+user.username = "yo"
+user.password = "PaSs789K"
+user.save
+        put :update, {:id => user.to_param, :user => { "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
+        assigns(:user).should eq(user)
+      end
+
+      it "redirects to the home" do
+              user = User.new
+user.first_name = "MyString"
+user.last_name = "ddd"
+user.username = "yo"
+user.password = "PaSs789K"
+user.save
+        put :update, {:id => user.to_param, :user => { "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
+        response.should redirect_to('/home')
+      end
+    end
+
+    describe "with invalid params" do
+      it "assigns the user as @user" do
+             user = User.new
+user.first_name = "MyString"
+user.last_name = "ddd"
+user.username = "yo"
+user.password = "PaSs789K"
+user.save
+        # Trigger the behavior that occurs when invalid params are submitted
+        User.any_instance.stub(:save).and_return(false)
+        put :update, {:id => user.to_param, :user => { "first_name" => "invalid value" }}, valid_session
+        assigns(:user).should eq(user)
+      end
+
+      it "re-renders the 'edit' template" do
+              user = User.new
+user.first_name = "MyString"
+user.last_name = "ddd"
+user.username = "yo"
+user.password = "PaSs789K"
+user.save
+        # Trigger the behavior that occurs when invalid params are submitted
+        User.any_instance.stub(:save).and_return(false)
+        put :update, {:id => user.to_param, :user => { "first_name" => "invalid value" }}, valid_session
+        response.should render_template("edit")
       end
     end
   end

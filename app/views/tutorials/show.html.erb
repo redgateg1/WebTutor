@@ -1,4 +1,4 @@
-<% @page_title = "User Menu" %>
+<% @page_title = "Tutorial Page" %>
 <header>
 <%= render 'access/navigation' %>
 </header>
@@ -9,8 +9,10 @@
       src="<%= @tutorial.avatar %>" style="width:800px; height:600px;" frameborder="5"/></iframe>
 
 </center> </p>
+<textarea readonly rows="4" cols="100">
+<%= @tutorial.tutorial_discription  %>
+</textarea> 
 
-<a href="<%= @tutorial.avatar %>" download="<%= @tutorial.avatar %>" >You can download this too!</a>
 
 <br />
 <%= link_to 'Back', tutorials_path %>

@@ -1,16 +1,22 @@
 WebTutor::Application.routes.draw do
+
   
-  resources :categories do
-    resources :tutorials
+    
+  resources :tutorials do
+    resources :comments
   end
 
-
-  #resources :tutorials
-
-   resources :users
+  resources :users
+  
   get 'home', :to => "access#index"
-
+  
+  get '/mathematics', :to => "tutorials#MathFilter"
+  get '/readingfilter', :to => "tutorials#ReadingFilter"
+  get '/writingfilter', :to => "tutorials#WritingFilter"
+  
   match ':controller(/:action(/:id))', :via => [:get,:post]
+  
+  
 
 
 

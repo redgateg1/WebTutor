@@ -91,7 +91,7 @@ class TutorialsController < ApplicationController
   def Reading
   @tut2 = Tutorial.reading
   end
-  def Writing
+  def WritingFilter
   @tut3 = Tutorial.writing
   end
   

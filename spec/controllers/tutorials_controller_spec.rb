@@ -32,15 +32,15 @@ describe TutorialsController do
 
   describe "GET index" do
     it "assigns all tutorials as @tutorials" do
-      tutorial = Tutorial.new
-tutorial.tutorial_name = "dsadsa"
-tutorial.tutorial_discription = "dasdsadas"
-tutorial.tutorial_path = "dsadsadsadsadsad"
-tutorial.tutorial_teacher_name = "miss"
-tutorial.tutorial_date_release = DateTime.now
-tutorial.save
+      tutorial2 = Tutorial.new
+tutorial2.tutorial_name = "2"
+tutorial2.tutorial_discription = "da33s"
+tutorial2.tutorial_path = "dsadsadsad3ad"
+tutorial2.tutorial_teacher_name = "mi33s"
+tutorial2.tutorial_date_release = DateTime.now
+tutorial2.save
       get :index, {}, valid_session
-      assigns(:tutorials).should eq([tutorial])
+      assigns(:tutorials).should eq([tutorial2])
     end
   end
 
@@ -217,4 +217,46 @@ tutorial.save
     end
   end
 
+  
+ describe "GET Math" do
+    it "assigns all math tutorials as @tutorials" do
+      tutorial2 = Tutorial.new
+tutorial2.tutorial_name = "2"
+tutorial2.tutorial_discription = "da33s"
+tutorial2.tutorial_path = "dsadsadsad3ad"
+tutorial2.tutorial_teacher_name = "mi33s"
+tutorial2.tutorial_date_release = DateTime.now
+tutorial2.save
+      get :Math, {}, valid_session
+      response.should render_template("Math")
+    end
+  end
+
+ describe "GET Reading" do
+    it "assigns all math tutorials as @tutorials" do
+      tutorial2 = Tutorial.new
+tutorial2.tutorial_name = "2"
+tutorial2.tutorial_discription = "da33s"
+tutorial2.tutorial_path = "dsadsadsad3ad"
+tutorial2.tutorial_teacher_name = "mi33s"
+tutorial2.tutorial_date_release = DateTime.now
+tutorial2.save
+      get :Reading, {}, valid_session
+      response.should render_template("Reading")
+    end
+  end
+
+ describe "GET Writing" do
+    it "assigns all math tutorials as @tutorials" do
+      tutorial2 = Tutorial.new
+tutorial2.tutorial_name = "2"
+tutorial2.tutorial_discription = "da33s"
+tutorial2.tutorial_path = "dsadsadsad3ad"
+tutorial2.tutorial_teacher_name = "mi33s"
+tutorial2.tutorial_date_release = DateTime.now
+tutorial2.save
+      get :Writing, {}, valid_session
+      response.should render_template("Writing")
+    end
+  end
 end
