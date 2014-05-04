@@ -8,6 +8,7 @@ gem 'rails', '3.2.16'
 gem 'pg'
 gem "paperclip", "~> 3.0"
 gem "cocaine", "= 0.3.2"
+gem 'aws-sdk'
 #gem 'aws-s3'
 group :test, :development do
   gem 'cucumber-rails', :require => false
@@ -15,8 +16,7 @@ group :test, :development do
   gem 'database_cleaner' # to clear Cucumber's test database between runs
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'
-  gem 'aws-s3'
-  gem 'aws-sdk'
+  
 gem 'simplecov' 
 gem 'rspec-rails'
 # a useful debugging aid for user stories
