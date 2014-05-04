@@ -15,7 +15,6 @@ group :test, :development do
   gem 'database_cleaner' # to clear Cucumber's test database between runs
   gem 'capybara'         # lets Cucumber pretend to be a web browser
   gem 'launchy'
-  gem 'aws-s3'
   gem 'aws-sdk'
 gem 'simplecov' 
 gem 'rspec-rails'
