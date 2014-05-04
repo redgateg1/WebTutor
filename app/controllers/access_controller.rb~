@@ -4,10 +4,21 @@ class AccessController < ApplicationController
   
   def index
 	# display text and links
+	if session[:user_id]
+   case session[:user_role]
+      when "student"
+        render :index
+      when "owner"
+        render :owner
+      else
+        render :error
+    end
+  end
   end
 
   def login
 	# login form
+	
   end
   
   def renew
@@ -24,19 +35,20 @@ class AccessController < ApplicationController
       found_user = User.where(:username => params[:username]).first
       if found_user
         authorized_user = found_user.authenticate(params[:password])
-        active_user = true
+        active_user = false
       end	  
     end
     if authorized_user
       
-    #  if authorized_user.subscribtion_expire >= Date.current 
-     #    active_user = true
-      #end
+      if authorized_user.subscribtion_expire >= Date.current 
+         active_user = true
+      end
 		  
 		  if active_user
 			# mark user as logged in
 			session[:user_id] = authorized_user.id
 			session[:username] = authorized_user.username
+session[:first_name] = authorized_user.first_name
 			session[:user_role] = authorized_user.user_role
 			flash[:notice] = "You are now logged in."
 			
@@ -64,8 +76,9 @@ class AccessController < ApplicationController
 	session[:user_id] = nil
 	session[:username] = nil
 	session[:user_role] = nil
+	session[:first_name] = nil
     flash[:notice] = "Logged out"
     redirect_to(:action => "login")
   end
-  
+
 end

@@ -48,6 +48,7 @@ class AccessController < ApplicationController
 			# mark user as logged in
 			session[:user_id] = authorized_user.id
 			session[:username] = authorized_user.username
+session[:first_name] = authorized_user.first_name
 			session[:user_role] = authorized_user.user_role
 			flash[:notice] = "You are now logged in."
 			
@@ -75,6 +76,7 @@ class AccessController < ApplicationController
 	session[:user_id] = nil
 	session[:username] = nil
 	session[:user_role] = nil
+	session[:first_name] = nil
     flash[:notice] = "Logged out"
     redirect_to(:action => "login")
   end
