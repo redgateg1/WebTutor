@@ -28,10 +28,10 @@ when /^the math page$/
 '/mathematics'
 
 when /^the reading page$/
-'/readingfilter'
+'/reading'
 
 when /^the writing page$/
-'/writingfilter'
+'/writing'
 
 	when /^the edit page for "(.*)"/
 	d = Tutorial.find_by_tutorial_name($1).id

@@ -1,10 +1,12 @@
+
 <li><%= link_to 'Tutorials', :controller => 'tutorials'  %></li>
 <li><%= link_to("My Profile", :controller => 'users', :action => 'edit', :id => session[:user_id]) %></li> |
 <li><%= link_to 'Logout', :controller => 'access', :action => 'logout'  %></li>|
 <li>
 <div id="search">
-<input type="submit" value="Search"> <input type="text" name="search">
+<%= form_tag :controller => 'tutorials', :action => 'search', :method => 'get' do %>
+      <%= text_field_tag :search, params[:search], :id => 'search_field' %>
+      <%= submit_tag "Search", :name => nil %> 
+ <% end %> 
 </div>
 </li>
-
-
