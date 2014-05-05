@@ -9,10 +9,8 @@
 </head>
 <body id="main_body" >
 	
-	<img id="top" src="top.png" alt="">
 	<div id="form_container">
-	
-		<h1><a> </a></h1>
+
 			<form id="form_823853" class="appnitro"  method="post" action="create">
 		<div class="form_description">
 			<h2>New User Registration</h2>
@@ -51,13 +49,17 @@
 			  <td><%= f.password_field(:password) %></td>
 			</tr>
 			<tr>
-			<%= f.hidden_field :subscribtion_expire, :value => DateTime.current t%>
+			<%= f.hidden_field :subscribtion_expire, :value => DateTime.current + 1.year %>
+=
 
 			  <td>&nbsp;</td>
 			  <td><%= f.submit("Create User") %></td>
 			</tr>	
 		  </table>
 		  <% end %>
+		  <div id="back">
+		  <%= link_to 'Back', :controller => 'access/login' %>
+		  </div>
 		</div>  
 	</div>
 </form>

@@ -915,9 +915,8 @@ div.img img
   margin: 5px;
   border: 1px solid #ffffff;
 }
-div.img a:hover img
+div.img a:hover img {border: 1px solid #0000ff;}
 {
-  border: 1px solid #0000ff;
   text-align: center;
   font-weight: normal;
   width: 120px;

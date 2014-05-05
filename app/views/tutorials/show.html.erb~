@@ -1,4 +1,4 @@
-<% @page_title = "Tutorial Menu" %>
+<% @page_title = "Tutorial Page" %>
 <header>
 <%= render 'access/navigation' %>
 </header>
@@ -22,7 +22,7 @@
   <%= render :partial => @tutorial.comments.reverse %>
 </div>
 
-<%= form_for([@tutorial, Comment.new], remote: true) do |f| %>
+<%= form_for([@tutorial, Comment.new]) do |f| %>
    <p>
      <%= f.label :body, "New Comment" %><br />
 	 <%= f.text_area :body,:cols => "40", :rows => "1" %>

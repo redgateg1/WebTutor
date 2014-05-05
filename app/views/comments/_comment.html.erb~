@@ -1,0 +1,8 @@
+<%= div_for comment do %>
+    <p>
+      <strong> <%= comment.commenter_name %> posted <%= time_ago_in_words(comment.created_at) %> ago</strong> <br />
+      <%= h(comment.body) %>
+        <%= link_to 'Edit' %>
+        <%= link_to 'Delete', {:action=>"destroy", :controller=>"comments", :tutorial_id=> comment.tutorial_id, :id=> comment.id}, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </p>
+    <% end %>
