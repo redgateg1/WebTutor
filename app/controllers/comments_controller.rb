@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
-  # GET /comments
+ #before_filter :confirm_logged_in
+
+ # GET /comments
   # GET /comments.json
   #def index
     #@comments = Comment.all

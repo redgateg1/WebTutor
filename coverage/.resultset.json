@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/saasbook/Documents/safe/WebTutor/app/controllers/access_controller.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/controllers/access_controller.rb": [
         1,
         null,
         1,
@@ -87,7 +87,7 @@
         null,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/controllers/application_controller.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/controllers/application_controller.rb": [
         1,
         1,
         null,
@@ -107,28 +107,30 @@
         null,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/helpers/application_helper.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/helpers/application_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/helpers/access_helper.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/helpers/access_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/helpers/comments_helper.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/helpers/comments_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/helpers/tutorials_helper.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/helpers/tutorials_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/helpers/users_helper.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/helpers/users_helper.rb": [
         1,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/controllers/comments_controller.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/controllers/comments_controller.rb": [
         1,
+        null,
+        null,
         null,
         null,
         null,
@@ -192,7 +194,7 @@
         null,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/models/comment.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/models/comment.rb": [
         1,
         null,
         1,
@@ -203,8 +205,10 @@
         null,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/controllers/tutorials_controller.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/controllers/tutorials_controller.rb": [
         1,
+        null,
+        null,
         null,
         null,
         1,
@@ -323,7 +327,7 @@
         null,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/models/tutorial.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/models/tutorial.rb": [
         1,
         null,
         1,
@@ -356,7 +360,7 @@
         1,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/controllers/users_controller.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/controllers/users_controller.rb": [
         1,
         null,
         null,
@@ -432,7 +436,7 @@
         null,
         null
       ],
-      "/home/saasbook/Documents/safe/WebTutor/app/models/user.rb": [
+      "/home/saasbook/Documents/h/WebTutor/app/models/user.rb": [
         1,
         1,
         1,
@@ -441,6 +445,6 @@
         null
       ]
     },
-    "timestamp": 1399409417
+    "timestamp": 1399419296
   }
 }

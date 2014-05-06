@@ -1,6 +1,8 @@
 class TutorialsController < ApplicationController
   # GET /tutorials
   # GET /tutorials.json
+
+before_filter :confirm_logged_in
   def index
     @tutorials = Tutorial.all
 
