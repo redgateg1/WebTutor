@@ -9,6 +9,7 @@ WebTutor::Application.routes.draw do
   resources :users
   
   get 'home', :to => "access#index"
+  get 'owner-home', :to => "access#index"
   
   get '/mathematics', :to => "tutorials#Math"
   get '/reading', :to => "tutorials#Reading"

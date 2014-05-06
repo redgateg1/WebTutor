@@ -48,15 +48,15 @@ class AccessController < ApplicationController
 			# mark user as logged in
 			session[:user_id] = authorized_user.id
 			session[:username] = authorized_user.username
-session[:first_name] = authorized_user.first_name
+      session[:first_name] = authorized_user.first_name
 			session[:user_role] = authorized_user.user_role
 			flash[:notice] = "You are now logged in."
 			
 			case authorized_user.user_role
 			when "student"
-			  redirect_to(:action => 'index')
+			  redirect_to('/home')
 			when "owner"
-			  redirect_to(:action => 'owner')
+			  redirect_to('/owner-home')
 			else
 			  redirect_to(:action => 'error')
 			end

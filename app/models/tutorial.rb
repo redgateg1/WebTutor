@@ -1,4 +1,5 @@
 class Tutorial < ActiveRecord::Base
+has_secure_password
 def self.search(search)
   search_condition = "%" + search + "%"
   find(:all, :conditions => ['tutorial_name ILIKE ? OR tutorial_discription ILIKE ?', search_condition, search_condition])

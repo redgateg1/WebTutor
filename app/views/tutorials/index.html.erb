@@ -6,7 +6,6 @@
 <h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tutorials</h1>
 
 <br />
-<%= link_to 'New Tutorial', new_tutorial_path %>
 </div>
 <br/>
 <br/>
@@ -27,7 +26,14 @@
     <td class="tutorials_td"><%= tutorial.CategoryID %></td>
 	
     
-    <td class="tutorials_td"><%= link_to 'Show', tutorial %>  <%= link_to 'Edit', edit_tutorial_path(tutorial) %>  <%= link_to 'Delete', tutorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td class="tutorials_td">
+    	<%= if session[:user_role] == 'owner' 
+    		link_to 'Edit', edit_tutorial_path(tutorial)
+    		end %>
+    	<%= if session[:user_role] == 'owner'
+    		link_to 'Delete', tutorial, method: :delete, data: { confirm: 'Are you sure?' } 
+    		end%>
+    </td>
   </tr>
 <% end %>
 </table>

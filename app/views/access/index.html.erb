@@ -1,31 +1,32 @@
 <% @page_title = "User Menu" %>
 <body>
-<header>
-<%= render 'access/navigation' %>
-</header>
+	<header>
+		<%= render 'access/navigation' %>
+	</header>
 <div>
   <div id="welcome"><h2>Welcome <%= session[:first_name] %>!</h2></div>
   <div>
-  <div class="mainimg">
- <img src="assets/SAT.jpg" alt="SAT Tutorial Website" width="900" height="300">
-</div>
-<br/>
-<br/>
-<br/>
-  <div>
-  <div class="img">
- <img src="assets/math.jpg" alt="Math" width="387" height="250">
- <a href="/mathematics"> <div class="desc">Check out our math tutorials</div></a>
-</div>
- <div class="img">
- <img src="assets/reading.jpg" alt="Reading" width="387" height="250">
- <a href="/reading"> <div class="desc">Check out our reading tutorials</div></a>
-</div>
- <div class="img">
- <img src="assets/writing.jpg" alt="Writing" width="387" height="250">
- <a href="/writing"> <div class="desc">Check out our writing tutorials</div></a>
- </div>
-</div>
+  	<div class="mainimg">
+ 		<img src="assets/SAT.jpg" alt="SAT Tutorial Website" width="900" height="300">
+	</div>
+	<br/>
+	<br/>
+	<br/>
+  	<div>
+  		<div class="img">
+ 			<img src="assets/math.jpg" alt="Math" width="387" height="250">
+ 			<a href="/mathematics"> <div class="desc">Check out our math tutorials</div></a>
+		</div>
+ 		<div class="img">
+ 			<img src="assets/reading.jpg" alt="Reading" width="387" height="250">
+ 			<a href="/reading"> <div class="desc">Check out our reading tutorials</div></a>
+		</div>
+ 		<div class="img">
+ 			<img src="assets/writing.jpg" alt="Writing" width="387" height="250">
+ 			<a href="/writing"> <div class="desc">Check out our writing tutorials</div></a>
+ 		</div>
+	</div>
 
+  </div>
 </div>
 </body>

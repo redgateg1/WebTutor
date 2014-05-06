@@ -1,12 +1,24 @@
-<% @page_title = "User Menu" %>
-<header>
-<%= render 'access/navigation' %>
-</header>
+<% @page_title = "Owner Menu" %>
+<body>
+	<header>
+		<%= render 'access/navigation' %>
+	</header>
 <div>
-  <h2>Owners Home Page</h2>
-  <div>Logged in as: <%= session[:username] %></div>
-  <ul>
-    <li><%= link_to("Upload Content", :controller => 'tutorials') %></li>
-    <li><%= link_to("Update My Profile", :controller => 'users', :action => 'edit', :id => session[:user_id]) %></li>
-  </ul>
+  <div id="welcome"><h2>Welcome <%= session[:first_name] %>!</h2></div>
+  <div>
+  	<div class="mainimg">
+ 		<img src="assets/SAT.jpg" alt="SAT Tutorial Website" width="900" height="300">
+	</div>
+	<br/>
+	<br/>
+	<br/>
+  	<div>
+  		<div class="img">
+ 			<img src="assets/upload.jpg" alt="Math" width="387" height="250">
+ 			<a href="/tutorials/new"> <div class="desc">Upload Tutorials</div></a>
+		</div>
+	</div>
+
+  </div>
 </div>
+</body>
