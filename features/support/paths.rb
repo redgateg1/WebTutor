@@ -12,7 +12,8 @@ module NavigationHelpers
   #
   def path_to(page_name)
     case page_name
-
+    when /^the owner home\s?page$/
+      '/owner-home'
     when /^the home\s?page$/
       '/home'
 when /^the login page$/
@@ -32,6 +33,9 @@ when /^the reading page$/
 
 when /^the writing page$/
 '/writing'
+
+when /^the error page$/
+'/error'
 
 	when /^the edit page for "(.*)"/
 	d = Tutorial.find_by_tutorial_name($1).id

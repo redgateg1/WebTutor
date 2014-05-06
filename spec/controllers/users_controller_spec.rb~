@@ -132,7 +132,7 @@ user.save
         # receives the :update_attributes message with whatever params are
         # submitted in the request.
         User.any_instance.should_receive(:update_attributes).with({ "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" })
-        put :update, {:id => user.to_param, :user => { "first_name" => "MyString" }}, valid_session
+        put :update, {:id => user.to_param, :user => { "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
       end
 
       it "assigns the requested user as @user" do
@@ -146,7 +146,7 @@ user.save
         assigns(:user).should eq(user)
       end
 
-      it "redirects to the login" do
+      it "redirects to the home" do
               user = User.new
 user.first_name = "MyString"
 user.last_name = "ddd"
@@ -154,7 +154,19 @@ user.username = "yo"
 user.password = "PaSs789K"
 user.save
         put :update, {:id => user.to_param, :user => { "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
-        response.should redirect_to('access/login')
+        response.should redirect_to('/home')
+      end
+
+      it "redirects to the owner home if owner" do
+              user = User.new
+user.first_name = "MyString"
+user.last_name = "ddd"
+user.username = "yo"
+user.user_role = "owner"
+user.password = "PaSs789K"
+user.save
+        put :update, {:id => user.to_param, :user => { "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
+        response.should redirect_to('/owner-home')
       end
     end
 

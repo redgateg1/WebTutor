@@ -62,6 +62,26 @@ Given /^a valid user$/ do
 @user.subscribtion_expire = Time.now + (2*7*24*60*60)
            @user.save
 end
+Given /^a valid owner$/ do
+  @user = User.new
+             @user.username = "owner"
+             @user.password = "lol123"
+	@user.created_at = Time.now
+@user.user_role = "owner"
+@user.first_name = "dsadsa"
+@user.last_name = "dasdsa"
+@user.subscribtion_expire = Time.now + (2*7*24*60*60)
+           @user.save
+end
+
+
+Given /^a logged in owner$/ do
+  Given "a valid user"
+  visit access_login
+  fill_in "username", :with => "owner"
+  fill_in "password", :with => "lol123"
+  click_button "Log in"
+end
 
 Given /^a logged in user$/ do
   Given "a valid user"

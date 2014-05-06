@@ -156,6 +156,8 @@ user.save
         put :update, {:id => user.to_param, :user => { "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
         response.should redirect_to('/home')
       end
+
+
     end
 
     describe "with invalid params" do

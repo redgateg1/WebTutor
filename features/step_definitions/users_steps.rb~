@@ -19,7 +19,7 @@ Given /^a math tutorial$/ do
 end
 Given /^a writing tutorial$/ do
   @tutorial = Tutorial.new
-@tutorial.tutorial_name = "MathStuff"
+@tutorial.tutorial_name = "WritingStuff"
 @tutorial.tutorial_discription = "Writing Description"
 @tutorial.tutorial_path = "/math.mv4"
 @tutorial.CategoryID = "writing"
