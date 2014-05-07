@@ -18,7 +18,7 @@
 
   </tr>
 
-<% @userss.each do |user| %>
+<% @users.each do |user| %>
   <tr class="tutorials_tr">
     <td class="tutorials_td"><%= user.first_name %></td>
     <td class="tutorials_td"><%= user.last_name %></td>

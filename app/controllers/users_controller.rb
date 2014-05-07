@@ -76,18 +76,18 @@ end
     end
   end
 
-  def destroy
-    if session[:user_role] == 'student'
-        redirect_to('/error')
-    else    
-      @user = User.find(params[:id])
-      @user.destroy
+ # def destroy
+  #  if session[:user_role] == 'student'
+   #     redirect_to('/error')
+   # else    
+    #  @user = User.find(params[:id])
+     # @user.destroy
 
-      respond_to do |format|
-        format.html { redirect_to users_url }
-        format.json { head :no_content }
-      end
-    end
-  end
+  #    respond_to do |format|
+   #     format.html { redirect_to users_url }
+    #    format.json { head :no_content }
+     # end
+   # end
+ # end
   
 end
