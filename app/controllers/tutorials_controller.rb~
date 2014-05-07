@@ -2,7 +2,7 @@ class TutorialsController < ApplicationController
   # GET /tutorials
   # GET /tutorials.json
 
-#before_filter :confirm_logged_in, :except => [:create]
+before_filter :confirm_logged_in, :except => [:create]
   def index
     @tutorials = Tutorial.all
 

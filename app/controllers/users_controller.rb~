@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
-#before_filter :confirm_logged_in, :except => [:new, :create]
+before_filter :confirm_logged_in, :except => [:new, :create]
   
   def index
 
