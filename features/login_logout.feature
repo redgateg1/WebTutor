@@ -10,26 +10,6 @@ And I fill in "Password" with "password123K"
 And I press "Log In"
 Then I should be on the home page
 
-Scenario: User views profile
-Given a valid user
-When I go to the login page
-And I fill in "Username" with "johnjohn"
-And I fill in "Password" with "password123K"
-And I press "Log In"
-Then I should be on the home page
-When I go to the profile page for "johnjohn"
-Then I should see "dsadsa"
-
-Scenario: User views profile
-Given a valid user
-When I go to the login page
-And I fill in "Username" with "johnjohn"
-And I fill in "Password" with "password123K"
-And I press "Log In"
-Then I should be on the home page
-When I go to the user page
-Then I should see "johnjohn"
-And I should see "dsadsa"
 
 Scenario: User fails to log in
 Given a valid user
