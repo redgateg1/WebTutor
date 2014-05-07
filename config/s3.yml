@@ -1,0 +1,12 @@
+development:
+bucket: webtutor2
+access_key_id: AKIAIV7ESDFGV4F2ZAEA
+secret_access_key: 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
+test:
+bucket: webtutor2
+access_key_id: AKIAIV7ESDFGV4F2ZAEA
+secret_access_key: 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
+production:
+bucket: webtutor2
+access_key_id: AKIAIV7ESDFGV4F2ZAEA
+secret_access_key: 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
