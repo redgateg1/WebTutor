@@ -6,7 +6,7 @@ before_filter :confirm_logged_in, :except => [:new, :create]
   def index
 
   if session[:user_role] == 'student'
-        redirect_to('/error')
+        redirect_to('/404')
     else  
     @users = User.all
 

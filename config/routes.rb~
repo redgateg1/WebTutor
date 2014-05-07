@@ -8,6 +8,7 @@ WebTutor::Application.routes.draw do
 
   resources :users
   
+ get "/404", :to => "errors#error_404"
   get 'home', :to => "access#index"
   get 'owner-home', :to => "access#index"
   

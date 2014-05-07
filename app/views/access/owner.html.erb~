@@ -18,12 +18,7 @@
  			<a href="/tutorials/new"> <div class="desc">Upload Tutorials</div></a>
 		</div>
 	</div>
-	<div>
-  		<div class="img">
- 			<img src="assets/users.jpg" alt="Math" width="387" height="250">
- 			<a href="/users"> <div class="desc">See all Users</div></a>
-		</div>
-	</div>
+
   </div>
 </div>
 </body>

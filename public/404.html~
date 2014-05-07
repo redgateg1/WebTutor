@@ -20,7 +20,7 @@
   <!-- This file lives in public/404.html -->
   <div class="dialog">
     <h1>The page you were looking for is not available</h1>
-    <p>You do not have the right privileges</p>
+    <p>You may have mistyped the address or the page may have moved.</p>
   </div>
 </body>
 </html>

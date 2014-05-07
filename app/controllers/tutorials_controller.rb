@@ -31,7 +31,7 @@ before_filter :confirm_logged_in, :except => [:create]
   # GET /tutorials/new.json
   def new
     if session[:user_role] == 'student'
-        redirect_to('/error')
+        redirect_to('/404')
     else    
       @tutorial = Tutorial.new
 
@@ -45,7 +45,7 @@ before_filter :confirm_logged_in, :except => [:create]
   # GET /tutorials/1/edit
   def edit
     if session[:user_role] == 'student'
-        redirect_to('/error')
+        redirect_to('/404')
     else    
       @tutorial = Tutorial.find(params[:id])
     end
@@ -55,7 +55,7 @@ before_filter :confirm_logged_in, :except => [:create]
   # POST /tutorials.json
   def create
     if session[:user_role] == 'student'
-        redirect_to('/error')
+        redirect_to('/404')
     else    
       @tutorial = Tutorial.new(params[:tutorial])
 
@@ -75,7 +75,7 @@ before_filter :confirm_logged_in, :except => [:create]
   # PUT /tutorials/1.json
   def update
     if session[:user_role] == 'student'
-        redirect_to('/error')
+        redirect_to('/404')
     else    
       @tutorial = Tutorial.find(params[:id])
 
@@ -95,7 +95,7 @@ before_filter :confirm_logged_in, :except => [:create]
   # DELETE /tutorials/1.json
   def destroy
     if session[:user_role] == 'student'
-        redirect_to('/error')
+        redirect_to('/404')
     else    
       @tutorial = Tutorial.find(params[:id])
       @tutorial.destroy
