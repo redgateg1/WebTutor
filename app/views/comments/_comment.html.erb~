@@ -2,7 +2,7 @@
     <p>
       <strong> <%= comment.comment_name %> posted <%= time_ago_in_words(comment.created_at) %> ago</strong> <br />
       <%= h(comment.body) %>
-    <strong> <%= if session[:first_name] == comment.comment_names
+    <strong> <%= if session[:first_name] == comment.comment_name
 link_to 'Delete', {:action=>"destroy", :controller=>"comments", :tutorial_id=> comment.tutorial_id, :id=> comment.id}, method: :delete, data: { confirm: 'Are you sure?' }
 end %>
     </p>
