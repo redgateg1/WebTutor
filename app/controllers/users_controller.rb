@@ -4,11 +4,16 @@ class UsersController < ApplicationController
 before_filter :confirm_logged_in, :except => [:new, :create]
   
   def index
+
+  if session[:user_role] == 'student'
+        redirect_to('/error')
+    else  
     @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
+end
     end
   end
 
@@ -67,6 +72,20 @@ before_filter :confirm_logged_in, :except => [:new, :create]
       else
         format.html { render action: "edit" }
         format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    if session[:user_role] == 'student'
+        redirect_to('/error')
+    else    
+      @user = User.find(params[:id])
+      @user.destroy
+
+      respond_to do |format|
+        format.html { redirect_to users_url }
+        format.json { head :no_content }
       end
     end
   end

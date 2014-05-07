@@ -1,14 +1,19 @@
 class UsersController < ApplicationController
   # GET /users
   # GET /users.json
-#before_filter :confirm_logged_in, :except => [:new, :create]
+before_filter :confirm_logged_in, :except => [:new, :create]
   
   def index
+
+  if session[:user_role] == 'student'
+        redirect_to('/error')
+    else  
     @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @users }
+end
     end
   end
 
