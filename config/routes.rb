@@ -1,6 +1,6 @@
 WebTutor::Application.routes.draw do
 
-  
+  root :to => 'access#index'
     
   resources :tutorials do
     resources :comments

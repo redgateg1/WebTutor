@@ -189,7 +189,36 @@ user.save
     end
   end
 
- 
+  describe "DELETE destroy" do
+    it "destroys the requested user" do
+           bah = User.new
+bah.first_name = "MyString"
+bah.username = "yo"
+bah.user_role = "owner"
+bah.password = "PaSs789K"
+bah.last_name = "dsadsad"
+bah.created_at = Time.now
+
+bah.save
+      expect {
+        delete :destroy, {:id => bah.to_param}, valid_session
+      }.to change(User, :count).by(-1)
+    end
+
+    it "redirects to the users list" do
+            use = User.new
+use.first_name = "MyString"
+use.username = "yo"
+use.password = "PaSs789K"
+use.last_name = "dsadsad"
+use.user_role = "owner"
+use.created_at = Time.now
+use.subscribtion_expire = Time.now + (2*7*24*60*60)
+use.save
+      delete :destroy, {:id => use.to_param}, valid_session
+      response.should redirect_to('/access/login')
+    end
+  end
 
  
 end

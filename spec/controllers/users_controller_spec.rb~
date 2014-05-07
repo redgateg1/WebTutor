@@ -157,17 +157,7 @@ user.save
         response.should redirect_to('/home')
       end
 
-      it "redirects to the owner home if owner" do
-              user = User.new
-user.first_name = "MyString"
-user.last_name = "ddd"
-user.username = "yo"
-user.user_role = "owner"
-user.password = "PaSs789K"
-user.save
-        put :update, {:id => user.to_param, :user => { "first_name" => "MyString", "last_name" => "ddd", "username" => "yoaa221", "password" => "PaSs123K" }}, valid_session
-        response.should redirect_to('/owner-home')
-      end
+
     end
 
     describe "with invalid params" do
@@ -199,7 +189,34 @@ user.save
     end
   end
 
- 
+  describe "DELETE destroy" do
+    it "destroys the requested user" do
+           bah = User.new
+bah.first_name = "MyString"
+bah.username = "yo"
+bah.password = "PaSs789K"
+bah.last_name = "dsadsad"
+bah.created_at = Time.now
+
+bah.save
+      expect {
+        delete :destroy, {:id => bah.to_param}, valid_session
+      }.to change(User, :count).by(-1)
+    end
+
+    it "redirects to the users list" do
+            use = User.new
+use.first_name = "MyString"
+use.username = "yo"
+use.password = "PaSs789K"
+use.last_name = "dsadsad"
+use.created_at = Time.now
+use.subscribtion_expire = Time.now + (2*7*24*60*60)
+use.save
+      delete :destroy, {:id => use.to_param}, valid_session
+      response.should redirect_to('/access/login')
+    end
+  end
 
  
 end
