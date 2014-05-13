@@ -3,7 +3,7 @@
 </header>
 <br/>
 <div>
-<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading Tutorials</h1>
+<h1>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mathematics Tutorials</h1>
 
 <br />
 </div>
@@ -18,7 +18,7 @@
 	<th class="tutorials_th">Functions</th>
   </tr>
 
-<% @tut2.each do |tutorial| %>
+<% @tut1.each do |tutorial| %>
   <tr class="tutorials_tr">
     <td class="tutorials_td"><%= tutorial.tutorial_name %></td>
     <td class="tutorials_td"><%= tutorial.TutorialType %></td>
@@ -26,11 +26,7 @@
     <td class="tutorials_td"><%= tutorial.CategoryID %></td>
 	
     
-    <td class="tutorials_td"><%= link_to 'Show', tutorial %> <%= if session[:user_role] == 'owner' 
-    		link_to 'Edit', edit_tutorial_path(tutorial)
-    		end %>
-    	<%= if session[:user_role] == 'owner'
-    		link_to 'Delete', tutorial, method: :delete, data: { confirm: 'Are you sure?' } 
-    		end%>
+    <td class="tutorials_td"><%= link_to 'Show', tutorial %>  <%= link_to 'Edit', edit_tutorial_path(tutorial) %>  <%= link_to 'Delete', tutorial, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
 <% end %>
 </table>

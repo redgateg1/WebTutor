@@ -2,8 +2,6 @@ Feature: Be able to make edit destroy comments
 
 
 Scenario: Create a new comment
-
-Scenario: View tutorial
 Given a valid tutorial
 When I am on the tutorial home page
 And I should see "MathStuff"
